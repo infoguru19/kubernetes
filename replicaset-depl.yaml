@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind:       ReplicaSet
+metadata:
+  name: replicaset-depl
+  labels:
+    app: replica-app
+spec:
+  replicas: 3
+  selector:
+     matchLabels:
+      app: replica-pod
+  template:
+    metadata:
+      labels: 
+        app: replica-pod
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        command: ["/bin/sh"]
+        args: ["-c", "apt update; mkdir demo"]
