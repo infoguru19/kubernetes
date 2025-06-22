@@ -1,0 +1,21 @@
+# Taint: Not create pod on specefic node
+#   kubectl taint node worker2 prod=true:NoSchedule ==> To amke Worker2 is tainted
+#   kubectl taint node worker2 prod=true:NoSchedule- ==> To amke Worker2 is untainted
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  namespace: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 80
+# Tolerations: Even though worker node is tainted, Create pod     
+  tolerations:
+  - key: "pod"
+    operator: "Equal"
+    value: "true"
+    effect: "NoSchedule"
