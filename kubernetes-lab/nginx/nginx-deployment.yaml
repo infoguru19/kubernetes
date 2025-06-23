@@ -6,7 +6,7 @@ metadata:
     app: nginx
   namespace: nginx
 spec:
-  replicas: 1 
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
@@ -18,6 +18,9 @@ spec:
       containers:
       - name: nginx
         image: nginx
+        volumeMounts:
+          - mountPath: "/var/www/html"
+            name: nginx-volume
         resources:
           requests:
             memory: "200Mi"
@@ -31,4 +34,7 @@ spec:
           httpGet:
             path: /
             port: 80
-
+      volumes:
+          - name: nginx-volume
+            persistentVolumeClaim:
+              claimName: nginx-pvc

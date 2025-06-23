@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: nginx-job
+  namespace: nginx
+spec:
+  completions: 1     # Run one time
+  parallelism: 1     # Create one pod for this
+  template:
+    spec:
+      containers:
+      - name: batch-container
+        image: busybox
+        command: ["sh", "-c", "echo Hello World && sleep 10"]
+      restartPolicy: Never
