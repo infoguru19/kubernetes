@@ -79,6 +79,10 @@ Rollout Deployemet
 ```bash
 kubectl rollout restart deployment kubernetes-dashboard -n kubernetes-dashboard
 ```
+Generate TOKEN
+```bash
+kubectl -n kubernetes-dashboard create token admin-user
+```
 Port-forward method (safest for dev/test):
 ```bash
  kubectl port-forward -n kubernetes-dashboard service/kubernetes-dashboard 8443:443 --address='192.168.0.171'
