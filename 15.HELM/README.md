@@ -28,6 +28,7 @@ helm repo update
 helm install my-nginx bitnami/nginx
 ```
 `my-nginx`: Release name
+
 `bitnami/nginx`: Chart name from the repo
 
 **Step 3: Check Installed Resources**
