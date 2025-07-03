@@ -8,7 +8,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/a
 Create an Admin User
 Create a dashboard-admin-user.yml file with the following content:
 
-```yaml
+```bash yaml
 
 apiVersion: v1
 kind: ServiceAccount
