@@ -1,0 +1,7 @@
+kind: Shirt
+apiVersion: stable.example.com/v1
+metadata: 
+  name: blackshirt
+spec:
+  color: "black"
+  size: "medium"

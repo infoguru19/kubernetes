@@ -38,3 +38,4 @@ spec:
           - name: nginx-volume
             persistentVolumeClaim:
               claimName: nginx-pvc
+
