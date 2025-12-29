@@ -1,16 +1,24 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: nginx-pv
-  namespace: nginx
-  labels:
-    app: nginx
+  name: dev-pv
 spec:
   capacity:
-    storage: 200Mi
+    storage: 1Gi
+  volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
-  storageClassName: local-storage
   persistentVolumeReclaimPolicy: Retain
-  hostPath:
-    path: /mnt/data/PV
+  storageClassName: local-storage
+
+  local:
+    path: /var/lib/dev-pv
+
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - my-kind-cluster-worker2
