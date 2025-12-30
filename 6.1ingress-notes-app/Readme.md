@@ -1,6 +1,6 @@
 # Install Ingress Controller
 
-### Prerequisite
+### Pre-requisite
 ```
 kubectl apply -f ns.yml
 kubectl apply -f nginx-deployment.yaml
