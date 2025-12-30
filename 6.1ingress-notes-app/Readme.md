@@ -1,4 +1,14 @@
 # Install Ingress Controller
+
+### Prerequisite
+```
+kubectl apply -f ns.yml
+kubectl apply -f nginx-deployment.yaml
+kubectl apply -f nginx-service.yaml
+kubectl apply -f notes-app-deployment.yaml
+kubectl apply -f notes-app-service.yaml
+kubectl apply -f  ingress.yml
+```
 ### Create Ingress Controller Pod and Service
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
