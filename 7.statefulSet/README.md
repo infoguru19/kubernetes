@@ -1,4 +1,4 @@
-## TO Access mysql
+## To Access mysql
 ``` kubectl port-forward service/mysql-service 3306:3306 -n mysql ```
 ## Open new Terminal
 ``` kubectl exec -it mysql-stateful-0 -n mysql -- bash ```
