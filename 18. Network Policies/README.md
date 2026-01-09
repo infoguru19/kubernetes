@@ -41,11 +41,8 @@ kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 networking:
   disableDefaultCNI: true
-  podSubnet: "192.168.0.0/16"
 nodes:
 - role: control-plane
-  image: kindest/node:v1.31.2
-- role: worker
   image: kindest/node:v1.31.2
 ```
 ```
@@ -53,7 +50,8 @@ kind create cluster --name calico-demo --config kind-calico.yaml
 ```
 ## Install Calico
 ```
-kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.31.33/manifests/calico.yaml
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.27.0/manifests/calico.yaml
+
 ```
 
 Wait until all pods are ready:
