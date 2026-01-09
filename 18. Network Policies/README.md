@@ -154,6 +154,9 @@ kubectl exec -n demo frontend -- wget -qO- backend-svc
 ```
 kind delete cluster --name calico-demo
 ```
+```
+kind get clusters
+``
 
 ✅ Works again
 
