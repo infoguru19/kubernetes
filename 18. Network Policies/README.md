@@ -156,7 +156,7 @@ kind delete cluster --name calico-demo
 ```
 ```
 kind get clusters
-``
+```
 
 ✅ Works again
 
