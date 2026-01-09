@@ -44,7 +44,9 @@ networking:
   podSubnet: "192.168.0.0/16"
 nodes:
 - role: control-plane
+  image: kindest/node:v1.31.2
 - role: worker
+  image: kindest/node:v1.31.2
 ```
 ```
 kind create cluster --name calico-demo --config kind-calico.yaml
