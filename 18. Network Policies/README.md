@@ -146,8 +146,14 @@ spec:
 kubectl apply -f allow-frontend.yaml
 ```
 ## Test Again (Allowed)
+```
 kubectl exec -n demo frontend -- wget -qO- backend-svc
+```
 
+## Delete Kind Cluster
+```
+kind delete cluster --name calico-demo
+```
 
 ✅ Works again
 
