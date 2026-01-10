@@ -1,4 +1,4 @@
-# What is a NetworkPolicy? (Quick Explanation)
+# What is a NetworkPolicy? 
 A NetworkPolicy is a Kubernetes resource that controls pod-to-pod and pod-to-external traffic.
 
 ## By default in Kubernetes:
